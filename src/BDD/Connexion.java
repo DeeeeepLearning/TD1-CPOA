@@ -8,9 +8,9 @@ public class Connexion {
 	static ResultSet result;
 	static ResultSetMetaData resultMeta;
 
-	private static String url ="jdbc:mysql://devbdd.iutmetz.univ-lorraine.fr:3306/basbunar2u_base?serverTimezone=Europe/Paris";
-	private static String user = "basbunar2u_appli";
-	private static String passwd = "31912712";
+	private static String url ="jdbc:mysql://devbdd.iutmetz.univ-lorraine.fr:3306/bdd_base?serverTimezone=Europe/Paris";
+	private static String user = "";
+	private static String passwd = "";
 	
 	public static  void Connect() throws ClassNotFoundException
 	{
@@ -19,7 +19,7 @@ public class Connexion {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("Driver OK");
 			conn = DriverManager.getConnection(url, user, passwd);
-			System.out.println("Connexion établie ...");
+			System.out.println("Connexion Ã©tablie ...");
 		} 
 		catch (SQLException sqle) 
 		{
@@ -36,10 +36,10 @@ public static void ajoutTableClient(int idClient, String nom, String prenom, Str
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		System.out.println("Driver OK");
 		conn = DriverManager.getConnection(url, user, passwd);
-		System.out.println("Connexion établie ...");
+		System.out.println("Connexion Ã©tablie ...");
 		stmt = conn.createStatement();
 		stmt.executeUpdate(requete);
-		System.out.println("Ajout réussi !");
+		System.out.println("Ajout rÃ©ussi !");
 	} catch (SQLException e) {
 		System.out.println("\n************************************************\n"
 				+"Erreur: " + e.getMessage()
@@ -54,10 +54,10 @@ public static void ajoutTablePeriodicite(int idPeriodicite, String libelle) thro
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		System.out.println("Driver OK");
 		conn = DriverManager.getConnection(url, user, passwd);
-		System.out.println("Connexion établie ...");
+		System.out.println("Connexion Ã©tablie ...");
 		stmt = conn.createStatement();
 		stmt.executeUpdate(requete);
-		System.out.println("Ajout réussi !");
+		System.out.println("Ajout rÃ©ussi !");
 	} catch (SQLException e) {
 		System.out.println("\n************************************************\n"
 				+"Erreur: " + e.getMessage()
@@ -72,10 +72,10 @@ public static void ajoutTableRevue(int idRevue, String titre, String description
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		System.out.println("Driver OK");
 		conn = DriverManager.getConnection(url, user, passwd);
-		System.out.println("Connexion établie ...");
+		System.out.println("Connexion Ã©tablie ...");
 		stmt = conn.createStatement();
 		stmt.executeUpdate(requete);
-		System.out.println("Ajout réussi !");
+		System.out.println("Ajout rÃ©ussi !");
 	} catch (SQLException e) {
 		System.out.println("\n************************************************\n"
 				+"Erreur: " + e.getMessage()
@@ -90,10 +90,10 @@ public static void ajoutTableAbo(int idAbonnement, int dateDebYear, int dateDebM
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		System.out.println("Driver OK");
 		conn = DriverManager.getConnection(url, user, passwd);
-		System.out.println("Connexion établie ...");
+		System.out.println("Connexion Ã©tablie ...");
 		stmt = conn.createStatement();
 		stmt.executeUpdate(requete);
-		System.out.println("Ajout réussi !");
+		System.out.println("Ajout rÃ©ussi !");
 	} catch (SQLException e) {
 		System.out.println("\n************************************************\n"
 				+"Erreur: " + e.getMessage()
@@ -109,10 +109,10 @@ public static void supprTable(String nomTable, int id) throws ClassNotFoundExcep
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		System.out.println("Driver OK");
 		conn = DriverManager.getConnection(url, user, passwd);
-		System.out.println("Connexion établie ...");
+		System.out.println("Connexion Ã©tablie ...");
 		stmt = conn.createStatement();
 		stmt.executeUpdate(query);
-		System.out.println("Suppression réussi");
+		System.out.println("Suppression rÃ©ussi");
 	} catch (SQLException e) {
 		System.out.println("\n************************************************\n"
 				+"Erreur: " + e.getMessage()
@@ -134,10 +134,10 @@ public static void modifTableAbonnement(int idAbonnement, int dateDebYear, int d
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		System.out.println("Driver OK");
 		conn = DriverManager.getConnection(url, user, passwd);
-		System.out.println("Connexion établie ...");
+		System.out.println("Connexion Ã©tablie ...");
 		stmt = conn.createStatement();
 		stmt.executeUpdate(query2);
-		System.out.println("Abonnement "+idAbonnement+" bien modifié ! ");
+		System.out.println("Abonnement "+idAbonnement+" bien modifiÃ© ! ");
 	} catch (SQLException e) {
 		System.out.println("\n************************************************\n"
 				+"Erreur: " + e.getMessage()
@@ -158,10 +158,10 @@ public static void modifTableClient(int idClient, String nom, String prenom, Str
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		System.out.println("Driver OK");
 		conn = DriverManager.getConnection(url, user, passwd);
-		System.out.println("Connexion établie ...");
+		System.out.println("Connexion Ã©tablie ...");
 		stmt = conn.createStatement();
 		stmt.executeUpdate(query2);
-		System.out.println("Client "+idClient+" bien modifié ");
+		System.out.println("Client "+idClient+" bien modifiÃ© ");
 	} catch (SQLException e) {
 		System.out.println("\n************************************************\n"
 				+"Erreur: " + e.getMessage()
@@ -177,10 +177,10 @@ public static void modifTablePeriodicite(int idPeriodicite, String libelle) thro
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		System.out.println("Driver OK");
 		conn = DriverManager.getConnection(url, user, passwd);
-		System.out.println("Connexion établie ...");
+		System.out.println("Connexion Ã©tablie ...");
 		stmt = conn.createStatement();
 		stmt.executeUpdate(query2);
-		System.out.println("Périodicité "+idPeriodicite+" bien modifié ! ");
+		System.out.println("PÃ©riodicitÃ© "+idPeriodicite+" bien modifiÃ© ! ");
 	} catch (SQLException e) {
 		System.out.println("\n************************************************\n"
 				+"Erreur: " + e.getMessage()
@@ -200,10 +200,10 @@ public static void modifTableRevue(int idRevue, String titre, String description
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		System.out.println("Driver OK");
 		conn = DriverManager.getConnection(url, user, passwd);
-		System.out.println("Connexion établie ...");
+		System.out.println("Connexion Ã©tablie ...");
 		stmt = conn.createStatement();
 		stmt.executeUpdate(query2);
-		System.out.println("Revue "+idRevue+" bien modifié ! ");
+		System.out.println("Revue "+idRevue+" bien modifiÃ© ! ");
 	} catch (SQLException e) {
 		System.out.println("\n************************************************\n"
 				+"Erreur: " + e.getMessage()
@@ -220,7 +220,7 @@ public static void affiche(String nomTable) throws ClassNotFoundException
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		System.out.println("Driver OK");
 		conn = DriverManager.getConnection(url, user, passwd);
-		System.out.println("Connexion établie ...");
+		System.out.println("Connexion Ã©tablie ...");
 		stmt = conn.createStatement();
 		result = stmt.executeQuery(query1);
 		resultMeta = result.getMetaData();
